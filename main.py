@@ -14,6 +14,11 @@ if __name__ == '__main__':
     claimable = jsonFile[0]["claimable_total"]
     total = jsonFile[0]["total"]
     lastDateClaimed = jsonFile[0]["last_claimed_item_at"]  # in UNIX timecode
+
+    lastDateDatetime = datetime.fromtimestamp(lastDateClaimed)
+    todayDatetime = datetime.now()
+    difference = todayDatetime-lastDateDatetime
+    print(difference.days, "days")
     lastDateUpdate = jsonFile[0]["update_time"]  # in UNIX timecode
     lastDateUpdate /= 1000
     print("Total Claimable: " + str(claimable))
