@@ -11,6 +11,17 @@ def home():
     headings = ("Name", "Total SLP", "Average" ,"Last Claimed", "Days Past Claiming", "Date Data Gathered")
     name = request.form.get('nm', False)
     address = request.form.get("ronin_add", False)
+    delete_name = request.form.get("delete_name", False)
+
+
+    # delete name in table
+    for i in range(len(summary)):
+        if summary[i][0] == delete_name:
+            summary.pop(i)   # remove whole row
+            addresses.pop(i) #remove address from listed address
+            delete_name = None
+            break
+
 
     # catch errors
     try:
@@ -19,6 +30,10 @@ def home():
         fromAPI[0]["claimable_total"]
     except:
         return render_template("index.html", headings=headings, summary=summary)
+
+
+
+
 
     if address in addresses:# avoid duplicates
         return render_template("index.html", headings = headings, summary=summary)
