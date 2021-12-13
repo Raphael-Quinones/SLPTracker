@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from main import getSLP
-from datetime import datetime
+from datetime import datetime,timedelta
 
 app = Flask(__name__)
 
@@ -77,11 +77,15 @@ def home():
 
                 row.append(difference.days)
 
+                # next claim date
+                nextClaimDate = lastDateDatetime + timedelta(days = 14 )
+                if todayDatetime > nextClaimDate:
+                    row.append("Claimable Now!")
+                else:
+                    row.append(nextClaimDate.strftime("%b. %d %I:%M:%S %p"))
 
-                # date
-                each_date = raw_data["update_time"]
-                each_date /= 1000  # converter doesn't read miliseconds UTX
-                row.append(datetime.utcfromtimestamp(each_date).strftime('%b %-d, %Y'))
+
+
 
                 # store into summary
                 summary.append(row)
