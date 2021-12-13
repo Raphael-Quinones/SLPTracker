@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>SLP Tracker</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'styles.css')}}">
 </head>
 <body>
 
-    <form action="#" method="post">
+<div class = "content">
+    <img src="/static/traxie.png">
+    <p class = "title">T R A X I E</p>
+    <hr style = "width: 125%">
+    <div action="#" method="post">
         <p><input type="text" name="nm" placeholder="Name"></p>
         <p><input type="text" name="ronin_add" placeholder="Ronin Address"></p>
         <p><input type="text" name="delete_name" placeholder="Name to Delete"></p>
-        <p><input type="submit" value="submit"></p>
+        <p><input type="submit" value="Submit"></p>
 
 
     <table>
@@ -30,6 +34,8 @@
         </tr>
         {% endfor %}
     </table>
+
+</div>
 
 </body>
 </html>

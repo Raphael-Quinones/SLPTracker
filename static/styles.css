@@ -1,0 +1,85 @@
+.content {
+    display: block;
+    max-width: 500px;
+    margin-left: 32%;
+    padding-top: 50px;
+    opacity: 0.9;
+}
+
+body {
+    background: url("axie.jpeg") center/cover no-repeat  fixed;
+
+}
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 650px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table tr {
+  background-color: #009879;
+  color: White;
+  text-align: left;
+  font-family: Arial;
+}
+
+th,td {
+  padding: 7px 8px;
+}
+
+tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+  color: #262626;
+}
+
+tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+submit{
+   background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: black;
+  position: absolute;
+  width; 100wh;
+  top: 0; right: 0; bottom: 95%; left: 0;
+  padding-left: 8px;
+  border: collapse;
+}
+
+.content img {
+    width: 100px;
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+
+.title {
+    color: white;
+    font-family: Arial;
+    font-weight: 700;
+    font-size: 1.2em;
+}

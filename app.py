@@ -8,7 +8,7 @@ summary = []  # store data from each address
 addresses = [] # check if address's already there to avoid duplicates
 @app.route("/",methods=["POST", "GET"])
 def home():
-    headings = ("Name", "Total SLP", "Average" ,"Last Claimed", "Days Past Claiming", "Date Data Gathered")
+    headings = ("Name", "Total SLP", "Average" ,"Last Claimed", "Days Past Claiming", "Next Claim Date")
     name = request.form.get('nm', False)
     address = request.form.get("ronin_add", False)
     delete_name = request.form.get("delete_name", False)
